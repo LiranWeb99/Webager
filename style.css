@@ -1,0 +1,147 @@
+body {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+}
+
+/*Header*/
+header {
+    width: 100%;
+    height: 17%;
+}
+
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+    text-align: center;
+    cursor: default;
+    font-size: 7vh;
+    letter-spacing: 0.4vw;
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    text-align: center;
+    cursor: default;
+    font-size: 4vh;
+    letter-spacing: 0.6vw;
+    font-weight: 520;
+}
+
+#addScreen {
+    position: absolute;
+    top: 6px;
+    left: 0px;
+
+    height: 15vh;
+    width: 10vw;
+    font-size: 4vh;
+    letter-spacing: 1px;
+
+    background: transparent;
+    color: #41403E;
+  
+
+    border: solid 0.25vw rgb(255, 170, 0); 
+    outline: solid 0.25vw rgb(255, 170, 0); 
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 1rem 1rem;
+    margin: 0 1rem;
+    font-weight: 500;
+
+    cursor: pointer;    
+}
+
+#addScreen:hover {
+    color: black;
+    font-weight: bold;
+}
+
+#rightNav {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+#rightNav>button  {
+    height: 8.3vh;
+    width: 8.3vw; 
+    font-size: min(1.1vw, 50px);   
+    letter-spacing: 1px; /**/
+
+    background: transparent;
+    color: #41403E;
+  
+
+    border: solid 2px #41403E; 
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    margin: 2px; /**/
+
+    cursor: pointer;
+}
+
+#rightNav>button:hover {
+    font-size: 1.2em;
+}
+/*Header*/
+
+hr {
+    margin-top: 3px;
+}
+
+/*Main*/
+main {
+    /*Just in Case*/
+    position: absolute;
+    display: flex;
+}
+
+main>div {
+    border: 5px solid black;
+    width: 30vw;
+    height: 58vh;
+    cursor: move;
+    position: absolute !important;
+}
+
+iframe {
+    position: absolute;
+    bottom: 0px;
+    width: 99.4%;
+    height: 92%;
+    border-top: 1px dotted black;
+}
+
+/*Image = Enlarge Button*/
+img { 
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 6%; height: 6%;
+    cursor: pointer;
+    margin: 2.5px;
+}
+
+/*Screen Number*/
+main>div>div:nth-child(2) {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: black;
+    font-weight: 500;
+    font-size: 1.5vw;
+    cursor: pointer;
+    margin: 2.5px;
+}
+
+/*Close Button*/
+main>div>div:nth-child(3) {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8vw;
+}
+ /*Main*/
