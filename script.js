@@ -83,7 +83,6 @@ function createScreenObject (urlScreen , screenNumber , zindex) {
   }
 
   let postFrame = document.createElement("iframe");
-  postFrame.setAttribute("is","x-frame-bypass");
   postFrame.setAttribute("src", urlScreen);
   newDiv.appendChild(postFrame);
 
