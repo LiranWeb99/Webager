@@ -141,13 +141,22 @@ zindex++;
 //Prompt Url And Activate the creation
 addScreen.onclick = function () {
   let m = prompt("URL of the website : ");
-  if(m.length>5) {
+  if(m.includes("http")==true) {
     createScreenObject(m,screenNumber,zindex);
     screenNumber++;
     zindex++;
   }
+
   else {
-    alert("too short");
+    if((m.includes(".") == true && m.length>2)) {
+      m = "http://www." + m;
+      createScreenObject(m,screenNumber,zindex);
+      screenNumber++;
+      zindex++;
+    }
+    else {
+      alert("wrong");
+    }
   }
 }
 
