@@ -126,6 +126,33 @@ $('.screen')
 console.log(arrScreens);
 }
 
+//First Time
+if(localStorage.getItem("firstTime") == null) {
+  localStorage.firstTime = "false";
+  document.getElementById("firstTimeDiv").style.display = "inherit";
+  //Video - autoplay
+  document.getElementById("approveVideo").onclick = function () {
+    document.getElementById("approveVideo").style.display = "none";
+    document.getElementsByTagName("video")[0].style.display = "none";
+    document.getElementsByTagName("video")[0].pause();
+    document.getElementById("patch").style.display = "inherit";
+    document.getElementById("pPatch").style.display = "inherit";
+  }
+
+  document.getElementById("patch").onclick = function () {
+    document.getElementById("start").style.display = "block";
+    document.getElementById("pPatch").style.display = "none";
+    document.getElementById("patch").style.display = "none";
+  }
+
+  document.getElementById("start").onclick = function () {
+    document.getElementById("firstTimeDiv").style.display = "none";
+  }
+
+
+  //then - please download this patch - it will allow you see the website in this website create element button
+}
+
 //Examples
 let screen0 = createScreenObject("https://www.youtube.com/" , screenNumber , zindex);
 screenNumber++;
@@ -172,8 +199,7 @@ window.addEventListener("click" , function (e) {
   if(e.srcElement.outerHTML == `<img src="enlargeButton2.png">`)
   {
     let b = e.srcElement.offsetParent;
-    b.style.width = "70vw";
+    b.style.width = "60vw";
     b.style.height = "70vh";
   }
 })
-

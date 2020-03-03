@@ -145,3 +145,79 @@ main>div>div:nth-child(3) {
     font-size: 1.8vw;
 }
  /*Main*/
+
+
+ /*First Time*/
+ #firstTimeDiv {
+     width: 100vw;
+     height: 90vh;
+     position: relative;
+     z-index: 1000;
+     background-color: white;
+     display: none;
+     cursor: default;
+     border: none;
+ }
+
+ #firstTimeDiv>p {
+     font-size: 3vw;
+     display: none;
+     font-style: italic;
+     font-weight: bold;
+     color: gray;
+     position: absolute;
+     left: 10%;
+     width: 120%;
+ }
+
+ #patch {
+    background-color: rgb(49, 128, 49);
+    border: 3px solid yellow;
+    width: 14vw;
+    height: 7vh;
+    position: absolute;
+    left: calc(50% - 7vw);
+    bottom: 50vh;
+    display: none;
+ }
+
+ #patch, #start {
+     display: none;
+ }
+
+ video {
+     width: 50vw;
+     height: 50vh;
+     border: 5px dashed black;
+     display: block;
+     position: absolute;
+     left: calc(50% - 25vw);
+     top: 5vh;
+ }
+
+ #approveVideo {
+
+     background-color: rgb(49, 128, 49);
+     border: 3px solid yellow;
+     font-weight: bold;
+     width: 14vw;
+     height: 7vh;
+     position: absolute;
+     left: calc(50% - 7vw);
+     bottom: 22vh;
+ }
+
+ button {
+     cursor: pointer;
+ }
+
+ #start {
+     position: relative;
+     display: none;
+     margin: auto;
+     background-color: rgb(49, 128, 49);
+     border: 3px solid yellow;
+     font-weight: bold;
+     width: 14vw;
+     height: 7vh;
+ }
