@@ -5,9 +5,11 @@ let screenNumber = 0;
 let zindex = 1;
 let topUp = 0.7;
 let leftUp = 0;
-let brakeLine = 0;
 
 //Menu
+document.getElementsByTagName("h1")[0].onclick = function () {
+  window.location.reload(true);
+}
 
         //Full Screen
         let viewFullScreen = document.getElementById("fullScreen");
@@ -28,7 +30,8 @@ let brakeLine = 0;
 
         //Explained ?
         document.getElementById("explained").onclick = function () {
-          alert("Coming Soon")
+          localStorage.removeItem("firstTime");
+          window.location.reload(true);
         }
 
         //Templates
@@ -128,30 +131,44 @@ console.log(arrScreens);
 
 //First Time
 if(localStorage.getItem("firstTime") == null) {
-  localStorage.firstTime = "false";
-  document.getElementById("firstTimeDiv").style.display = "inherit";
-  //Video - autoplay
-  document.getElementById("approveVideo").onclick = function () {
-    document.getElementById("approveVideo").style.display = "none";
-    document.getElementsByTagName("video")[0].style.display = "none";
-    document.getElementsByTagName("video")[0].pause();
-    document.getElementById("patch").style.display = "inherit";
-    document.getElementById("pPatch").style.display = "inherit";
+  document.getElementById("firstTimeDiv").style.display = "block";
+  let video = document.getElementsByTagName("video")[0];
+  let continue1 = document.getElementById("continue");
+  let downloadAndPatch = document.getElementsByClassName("downloadAndPatch");
+  let skipDownload = document.getElementById("skipDownload");
+  let downloadPatch = document.getElementById("downloadPatch");
+  let startWebager = document.getElementById("startWebager");
+  let pPatch = document.getElementById("pPatch");
+
+  continue1.onclick = function () {
+    video.style.display = "none";
+    continue1.style.display = "none";
+    downloadAndPatch[0].style.display = "inherit";
+    downloadAndPatch[1].style.display = "inherit";
+    downloadAndPatch[2].style.display = "inherit";
   }
 
-  document.getElementById("patch").onclick = function () {
-    document.getElementById("start").style.display = "block";
-    document.getElementById("pPatch").style.display = "none";
-    document.getElementById("patch").style.display = "none";
+  skipDownload.onclick = function () {
+    skipDownload.style.display = "none";
+    pPatch.style.display = "none";
+    downloadPatch.style.display = "none";
+    startWebager.style.display = "inherit";
   }
 
-  document.getElementById("start").onclick = function () {
+  downloadPatch.onclick = function () {
+    skipDownload.style.display = "none";
+    pPatch.style.display = "none";
+    downloadPatch.style.display = "none";
+    startWebager.style.display = "inherit";
+  }
+
+  startWebager.onclick = function () {
     document.getElementById("firstTimeDiv").style.display = "none";
+    localStorage.firstTime = "false";
+    window.location.reload(true);
   }
-
-
-  //then - please download this patch - it will allow you see the website in this website create element button
 }
+
 
 //Examples
 let screen0 = createScreenObject("https://www.youtube.com/" , screenNumber , zindex);
@@ -166,26 +183,50 @@ zindex++;
 
 
 //Prompt Url And Activate the creation
-addScreen.onclick = function () {
-  let m = prompt("URL of the website : ");
-  if(m.includes("http")==true) {
-    createScreenObject(m,screenNumber,zindex);
-    screenNumber++;
-    zindex++;
-  }
-
-  else {
-    if((m.includes(".") == true && m.length>2)) {
-      m = "http://www." + m;
+if(localStorage.firstTime == "false")
+{
+  addScreen.onclick = function () {
+    let m = prompt("URL of the website : ");
+    if(m.includes("http")==true) {
       createScreenObject(m,screenNumber,zindex);
       screenNumber++;
       zindex++;
     }
+  
     else {
-      alert("wrong");
+      if((m.includes(".") == true && m.length>2)) {
+        m = "http://www." + m;
+        createScreenObject(m,screenNumber,zindex);
+        screenNumber++;
+        zindex++;
+      }
+      else {
+        alert("wrong");
+      }
     }
   }
 }
+
+if(localStorage.firstTime != "false")
+{
+  addScreen.onclick = function () {
+    alert("You are during Tutorial");
+  }
+
+  document.getElementById("explained").onclick = function () {
+    alert("You are already during Tutorial, you can back every time using this button");
+  }
+
+  document.getElementById("clearAll").onclick = function () {
+    alert("You are during Tutorial");
+  }
+
+  document.getElementById("templates").onclick = function () {
+    alert("You are during Tutorial");
+  }
+}
+
+
 
 //Close - Javascript
 window.addEventListener("click" , function (e) {
@@ -203,3 +244,4 @@ window.addEventListener("click" , function (e) {
     b.style.height = "70vh";
   }
 })
+
