@@ -13,6 +13,7 @@ body {
 header {
     width: 100%;
     height: 17%;
+    text-align: center;
 }
 
 h1 {
@@ -22,6 +23,9 @@ h1 {
     font-size: 7vh;
     letter-spacing: 0.4vw;
     cursor: pointer;
+    display: inline;
+    position: relative;
+    z-index: 1000;
 }
 
 h2 {
@@ -37,6 +41,7 @@ h2 {
     position: absolute;
     top: 6px;
     left: 0px;
+    z-index: 1000;
 
     height: 15vh;
     width: 10vw;
@@ -66,6 +71,7 @@ h2 {
     position: absolute;
     top: 3px;
     right: 3px;
+    z-index: 1000;
 }
 
 #rightNav>button  {
@@ -92,7 +98,7 @@ h2 {
 
 
 hr {
-    margin-top: 3px;
+    margin-top: 8px;
 }
 
 
@@ -208,16 +214,16 @@ a {
      cursor: pointer;
      font-size: 1.7vw;
      font-weight: bold;
-     background-color: #4CAF50;
+     background-color: rgb(106, 76, 175);
      width: 20vw;
      height: 10vh;
      position: relative;
-     top: 8vh;
+     top: 3vh;
  }
 
  #skipDownload {
      text-align: center;
-     margin-top: 15vh;
+     margin-top: 10vh;
      color: gray;
      cursor: pointer;
  }
@@ -233,3 +239,5 @@ a {
      top: 30vh;
      cursor: pointer;
  }
+
+ 

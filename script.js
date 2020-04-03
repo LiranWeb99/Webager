@@ -5,6 +5,8 @@ let screenNumber = 0;
 let zindex = 1;
 let topUp = 0.7;
 let leftUp = 0;
+let above = 50;
+
 
 //Menu
 document.getElementsByTagName("h1")[0].onclick = function () {
@@ -30,7 +32,7 @@ document.getElementsByTagName("h1")[0].onclick = function () {
 
         //Explained ?
         document.getElementById("explained").onclick = function () {
-          localStorage.removeItem("firstTime");
+          localStorage.removeItem("firstTime1");
           window.location.reload(true);
         }
 
@@ -98,7 +100,11 @@ function createScreenObject (urlScreen , screenNumber , zindex) {
 
    //Screen name - Center
    let screenName = document.createElement("div");
-   screenName.innerText= "Screen " + (screenNumber+1);
+   screenNamePart1 = urlScreen.indexOf(".");
+   screenNamePart1+=1;
+   screenNamePart2 = urlScreen.indexOf(".",screenNamePart1);
+   screenNamePart3 = urlScreen.slice(screenNamePart1,screenNamePart2); //Website Name
+   screenName.innerText= "Screen " + (screenNumber+1) + " - " + screenNamePart3;
    newDiv.appendChild(screenName);
 
   //Enlarge Button
@@ -111,7 +117,14 @@ function createScreenObject (urlScreen , screenNumber , zindex) {
     handles: "all" ,autoHide:true
   }; 
   $('.screen')
-.draggable()
+.draggable({
+  stop: function( event, ui ) {
+      if(parseInt(event.target.offsetTop)<-1)
+      {
+        event.target.style.top = '0px'; //Don't pass the grey line. <hr/> tag.
+      }
+  } 
+})
 .resizable(resizeOpts);
 
 $('.screen')
@@ -126,11 +139,12 @@ $('.screen')
     alert('resizing stopped');
   }
 });
-console.log(arrScreens);
 }
 
+
+
 //First Time
-if(localStorage.getItem("firstTime") == null) {
+if(localStorage.getItem("firstTime1") == null) {
   document.getElementById("firstTimeDiv").style.display = "block";
   let video = document.getElementsByTagName("video")[0];
   let continue1 = document.getElementById("continue");
@@ -164,7 +178,7 @@ if(localStorage.getItem("firstTime") == null) {
 
   startWebager.onclick = function () {
     document.getElementById("firstTimeDiv").style.display = "none";
-    localStorage.firstTime = "false";
+    localStorage.firstTime1 = "false";
     window.location.reload(true);
   }
 }
@@ -174,16 +188,16 @@ if(localStorage.getItem("firstTime") == null) {
 let screen0 = createScreenObject("https://www.youtube.com/" , screenNumber , zindex);
 screenNumber++;
 zindex++;
-let screen1 = createScreenObject("https://twitter.com/home" , screenNumber , zindex);
+let screen1 = createScreenObject("https://www.twitter.com/" , screenNumber , zindex);
 screenNumber++;
 zindex++;
-let screen2 = createScreenObject("https://www.quora.com/" , screenNumber , zindex);
+let screen2 = createScreenObject("https://www.google.com/" , screenNumber , zindex);
 screenNumber++;
 zindex++;
 
 
 //Prompt Url And Activate the creation
-if(localStorage.firstTime == "false")
+if(localStorage.firstTime1 == "false")
 {
   addScreen.onclick = function () {
     let m = prompt("URL of the website : ");
@@ -207,7 +221,7 @@ if(localStorage.firstTime == "false")
   }
 }
 
-if(localStorage.firstTime != "false")
+if(localStorage.firstTime1 != "false")
 {
   addScreen.onclick = function () {
     alert("You are during Tutorial");
@@ -245,3 +259,34 @@ window.addEventListener("click" , function (e) {
   }
 })
 
+//Browser Alerts
+
+if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+    {
+         alert('Please use Chrome browser for full expirence');
+    }
+if(navigator.userAgent.indexOf("Opera") != -1 ) 
+    {
+         alert('Please use Chrome browser for full expirence');
+    }
+if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) 
+    {
+      alert('Please use Chrome browser for full expirence');
+    }
+ 
+//explorer / EDGE ??
+
+//Above
+$(".screen").mousedown(function(e){ 
+  above+=50;
+  //e.toElement.parentElement.style.zIndex 
+  if(e.toElement.className == "screen ui-draggable ui-resizable")
+  {
+    e.toElement.style.zIndex = above;
+  }
+  
+  else {
+    e.toElement.parentElement.style.zIndex = above;
+  }
+  //screen ui-draggable ui-resizable
+});
