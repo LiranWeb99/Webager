@@ -3,60 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webager - Keep your web simple</title>
-    <link rel="icon" href="wPink.jpg" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="style.css"/> <!--Style Sheet-->
-    <link rel="stylesheet" href="styleMobile.css"/> <!--Mobile-->
-    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet"/> <!--h1 tag font-->
-    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet"/> <!--h2 tag font-->
-    <meta name="keywords" content="Webager , Keep your web simple , Make your own dashboard , Compare anything , Control iframes"> <!--SEO-->
-    <meta name="description" content="Webager is a tool that helping you to make your own dashboard by adding website's links as iframes and adjust their size and location by their choise."> <!--SEO-->
+    <title>Webager - Keep your web simple</title> <!--Make your own dashboard ?-->
+    <link rel="stylesheet" href="style.css"> <!--PC & Laptops-->
+    <link rel="stylesheet" href="mobile.css"> <!--Blocking mobile-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> <!--h1 tag font-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+    <link rel="icon" href="wPink.jpg" type="image/gif" sizes="16x16">
+    <meta name="keywords" content="Webager , Keep your web simple , Make your own dashboard , tool for consuming information from 
+    a multiple sources at the same time and at the same place , Control iframes"/>
+    <meta name="description" content="Webager is a tool that allow you to control your informations sources
+    at the same time and at the same place"/>
+</head>
 
 <body>
-    <!--Header + Menu-->
-    <header>
-        <h1>webager</h1>
-        <h2>Keep your web simple</h2>
-        <nav>
-            <button id="addScreen">Add Screen</button>
-
-            <div id="rightNav">
-                <button id="fullScreen">Full Screen</button>
-                <button id="explained">Explained ?</button>
-                <button id="templates">Templates</button>
-                <button id="clearAll">Clear All</button>
+    <div id="blockMobile">
+        <header>
+            <h1>
+                <span id="firstLetter">W</span>
+                <span id="secondLetter">e</span>
+                <span id="thirdLetter">b</span>
+                <span id="fourthLetter">a</span>
+                <span id="fifthLetter">g</span>
+                <span id="sixthLetter">e</span>
+                <span id="seventhLetter">r</span>
+            </h1>
+            <h2>Keep your web simple</h2>
+            <nav> <!--Menu-->
+                <button id="addScreen" class="addScreenMore">Add Screen</button>
+                <div id="rightNav">
+                    <button id="fullScreen">Full Screen</button>
+                    <button id="about">About</button>
+                    <button id="mainOption" class="options">Options</button>
+                    <div id="optionsExtension">
+                        <div class="redLineOptions"></div>
+                        <button id="buy" class="options">I want to buy something</button>
+                        <div class="redLineOptions"></div>
+                        <button id="save" class="options">Save</button>
+                        <div class="redLineOptions"></div>
+                        <button id="clearAll" class="options">Clear All</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    
+        <hr/>
+    
+        <main>
+            <div id="onBoarding">
+                <iframe src="https://www.youtube.com/embed/5NXmOCsTMMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                <div id="onBroadingX">X</div>
+                <h2 id="welcome">welcome to Webager !</h2>
+                <p>Webager is a powerful tool for manage your data at the same time and at the same place</p>
+                <p>Full resizable , Full draggable , Full Control</p>
+                <p>Click and Activate  <button id="global"><a href="https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe" target="_blank">Global</a></button> for allowing global sites to perform</p>
+                <button id="start">Start</button>
             </div>
-        </nav>
-    </header>
-    <!--Header + Menu-->
 
-    <hr />
+            <div id="inputDomains">
+                <p>Enter the URL / Website's domain name:</p>
+                <input id="inputDomainName" type="text" placeholder="type here...">
+                <p>For example : 'https://www.youtube.com' or 'youtube.com'</p>
+                <button id="cancelSubmitDomain">Cancel</button>
+                <input id="submitDomain" type="submit" value="OK">
+            </div>
+        </main>
+    </div>
 
-    <!--Control Screens-->
-    <main> 
-        <div id="firstTimeDiv"> <!--Explanation : Display is NONE-->
-            <video controls autoplay muted>
-                <source src="firstVideo.mp4" type="video/mp4">
-            </video>
-            <button id="continue">Continue</button>
-            <p class="downloadAndPatch" id="pPatch">Download the patch for approach global sites like Youtube and Twitter</p>
-            <a href="https://chrome.google.com/webstore/detail/iframe-allow/gifgpciglhhpmeefjdmlpboipkibhbjg" target="_blank"><button class="downloadAndPatch" id="downloadPatch">PATCH</button></a>
-            <p class="downloadAndPatch" id="skipDownload">Skip</p>
-            <button class="downloadAndPatch" id="startWebager">Start</button>
-        </div>
-    </main>
-    <!--Control Screens-->
-    <section id="forMobile">
+    <div id="blockMessage">
         <p>Hello !</p>
-        <br/>
-        <br/>
-        <p>Webager is available only for PC and Monitors.</p> 
-        <p>Please use another device for using our service :)</p>
-    </section>
-    <script src="script.js"></script>
-    </script>
+        <p>Webager is only available for monitors and Chrome browser :)</p>
+    </div>
+<script src="script.js"></script> <!--BackEnd code-->
 </body>
 </html>

@@ -1,0 +1,20 @@
+@media screen and (max-width: 1024px) { /*Blocking view for tablets & mobiles*/
+    #blockMobile {
+        display: none;
+    }
+
+    body {
+        margin: 0 auto;
+        background-color: rgb(0, 187, 250);
+    }
+
+    #blockMessage {
+        color: white;
+        font-size: 5vh;
+        display: unset !important;
+    }
+}
+
+#blockMessage {
+    display: none;
+}

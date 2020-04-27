@@ -1,243 +1,399 @@
+/*Generall*/
 body {
     margin: 0 auto;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-}
-
-* {
-    margin: 0;
+    /*How to Font-Size Responsivly ?*/
 }
 
 /*Header*/
 header {
-    width: 100%;
-    height: 17%;
     text-align: center;
 }
 
 h1 {
-    font-family: 'Bowlby One SC', cursive;
-    text-align: center;
-    cursor: default;
-    font-size: 7vh;
-    letter-spacing: 0.4vw;
+    margin: 0 auto;
     cursor: pointer;
     display: inline;
-    position: relative;
-    z-index: 1000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 9vh;
+    letter-spacing: -0.3vw;
+}
+
+#firstLetter {
+    color: #4284F7;
+}
+
+#secondLetter {
+    color: #E74231;
+}
+
+#thirdLetter {
+    color: #FFBD00;
+}
+
+#fourthLetter {
+    color: #4284F7;
+}
+
+#fifthLetter {
+    color: #34A952;;
+}
+
+#sixthLetter {
+    color: #E74231;
+}
+
+#seventhLetter {
+    color: #FFBD00;
 }
 
 h2 {
-    font-family: 'Lora', serif;
-    text-align: center;
-    cursor: default;
+    margin: 0 auto;
     font-size: 4vh;
-    letter-spacing: 0.6vw;
-    font-weight: 520;
-}
-
-#addScreen {
-    position: absolute;
-    top: 6px;
-    left: 0px;
-    z-index: 1000;
-
-    height: 15vh;
-    width: 10vw;
-    font-size: 4vh;
-    letter-spacing: 1px;
-
-    background: transparent;
-    color: #41403E;
-  
-
-    border: solid 0.25vw rgb(255, 170, 0); 
-    outline: solid 0.25vw rgb(255, 170, 0); 
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    padding: 1rem 1rem;
-    margin: 0 1rem;
+    letter-spacing: 0.7vw;
     font-weight: 500;
-
-    cursor: pointer;    
+    margin-top: 0.7vh;
 }
 
-#addScreen:hover {
-    color: black;
-    font-weight: bold;
+button {
+    cursor: pointer;
+    width: 8.5vw;
+    height: 7vh;
+    font-size: 2vh;
+    margin-top: 0.5vh;
+    margin-right: 0.5vh;
+    background-color: transparent;
 }
 
 #rightNav {
     position: absolute;
-    top: 3px;
-    right: 3px;
-    z-index: 1000;
+    top: 0.2vh;
+    right: 0.2vw;
 }
 
-#rightNav>button  {
-    height: 8.3vh;
-    width: 8.3vw; 
-    font-size: min(1.1vw, 50px);   
-    letter-spacing: 1px; /**/
-
-    background: transparent;
-    color: #41403E;
-  
-
-    border: solid 2px #41403E; 
+#rightNav>button {
+    margin-left: 0.8vw;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    margin: 2px; /**/
+}
 
+#fullScreen {
+    border: 3.5px solid #34A952;
+}
+
+#fullScreen:hover {
+    color: #34A952;
+}
+
+#about {
+    border: 3.5px solid #4284F7;
+}
+
+#about:hover {
+    color: rgb(0, 94, 255);
+}
+
+.options {
+    border: 3.5px solid #E74231;
+    margin-top: 0px;
+    z-index: 50000;
+}
+
+.options:hover {
+    color: #E74231;
+}
+
+#optionsExtension {
+    position: absolute;
+    top: 7.5vh;
+    right: 0.2vw;
+    display: none;
+    z-index: 50000;
+}
+
+
+#optionsExtension>button {
+    background-color: white;
+}
+
+.redLineOptions {
+    width: 0.5vw;
+    height: 4vh;
+    background-color: #E74231;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#addScreen {
+    position: absolute;
+    top: 2.3vh;
+    left: -0.8vw;
+    width: 9vw;
+    height: 12vh;
+    background: white;
     cursor: pointer;
+    display: inline-block;
+    letter-spacing: 0.075em;
+    padding: .8em 1em;
+    margin: auto 2em;
+    box-shadow: -0.5em 0.5em rgba(16, 24, 50, 0);
+    transition: all 200ms ease-in-out;
+    font-size: 3vh;
+    font-weight: 600;
+    /*after,before,active,hove .... box-sizing*/
+    /*SASS , SCSS*/
 }
 
-#rightNav>button:hover {
-    font-size: 1.2em;
+#addScreen:before , #addScreen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    /*content*/
 }
-/*Header*/
+
+#addScreen:before {
+    left: -0.59em;
+    top: .15em;
+    width: .31em;
+    height: 97.5%;
+    transform: skewY(-45deg);
+}
+
+#addScreen:after {
+    bottom: -0.61em;
+    right: 0.16em;
+    width: 98%;
+    height: .31em;
+    transform: skewX(-45deg);
+}
+
+#addScreen:hover {
+    background-color: white;
+    background-size: 90%;
+    transform: translate(0.15em, -0.15em);
+    box-shadow: -0.8em 0.8em 0.15em rgba(16, 24, 50, 0.1);
+}
+
+.addScreenMore {
+    border: 3px solid #101832;
+    color: #101832;
+}
+
+.addScreenMore:before, .addScreenMore:after {
+    background: #101832;
+    border: 3px solid #101832;
+}
+
+#inputDomains {
+    display: none;
+    border: 1px solid lightblue;
+    height: 20vh;
+    width: 33vw;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 17vw);
+    box-shadow: 0px 0px 3px 0px black;
+    z-index: 100000000; /*100mil*/
+}
+
+#inputDomains>p:nth-child(1) {
+    margin-top: 1vh;
+    font-size: 2.18vh;
+    margin-left: 0.5vw;
+}
+
+#inputDomains>p:nth-child(3) {
+    color: gray;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 0.5vh;
+}
+
+#inputDomainName {
+    width: 70%;
+    height: 19%;
+    display: block;
+    margin: auto;
+    border: 1px solid lightblue;
+    padding-left: 0.25vw;
+}
+
+#inputDomainName::placeholder {
+    position: relative;
+    left: 0.25vw;
+}
 
 
-hr {
-    margin-top: 8px;
+#submitDomain {
+    cursor: pointer;
+    background-color: #1A73E8;
+    color: white;
+    font-weight: 700;
+    height: 5vh;
+    width: 5vw;
+    position: absolute;
+    bottom: 0px;
+    right: 7vw;
+    border: none;
+    border-radius: 5%;
+    margin-bottom: 1%;
+}
+
+#cancelSubmitDomain {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    right: 1vw;
+    height: 5vh;
+    width: 5vw;
+    border-radius: 5%;
+    border: 1px solid gray;
+    margin-bottom: 1%;
 }
 
 
 /*Main*/
 main {
-    /*Just in Case*/
-    position: absolute;
+    margin-left: 1vw;
 }
 
-main>div {
-    border: 5px solid black;
-    width: 30vw;
-    height: 58vh;
-    cursor: move;
+.screen {
+    background-color: white;
+    border: 6px solid;
+    border-image-source: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
+    border-image-slice: 1;
+    width: 20vw; 
+    height: 35vh; 
     position: absolute !important;
-    margin-left: 0.33vw;
+    resize: both;
+    cursor: move;
+    bottom: 0vh;
+    left: 0px;
+    opacity: unset !important;
 }
 
 iframe {
     position: absolute;
     bottom: 0px;
-    width: 99.4%;
-    height: 92%;
+    width: 100%;
+    height: 91%;
+    margin-left: -0.2vw;
     border-top: 1px dotted black;
 }
 
-/*Image = Enlarge Button*/
-img { 
+.close {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 6%; height: 6%;
+    top: 1%;
+    left: 0.7%;
+    font-size: 140%;
     cursor: pointer;
-    margin: 2.5px;
 }
 
-/*Screen Number*/
-main>div>div:nth-child(2) {
+.enlargeButton {
+    position: absolute;
+    top: 1%;
+    right: 0.7%;
+    width: 6%;
+    height: 6%;
+    cursor: pointer;
+}
+
+.screenName {
+    text-align: center;
+    margin-top: 0.5%;
+    font-size: 170%;
+    font-weight: bold;
+}
+
+#onBoarding {
+    background-color: white;
+    z-index: 100000000000000;
+    position: absolute;
+    top: 5vh;
+    left: 10vw;
+    width: 80vw;
+    height: 90vh;
+    display: none;
+}
+
+#onBoarding>iframe {
     position: absolute;
     top: 0px;
     left: 0px;
-    color: black;
-    font-weight: 500;
-    font-size: 1.5vw;
+    height: 100%;
+    width: 40vw;
+}
+
+#onBroadingX {
+    position: absolute;
+    top: 0px;
+    right: 0px;
     cursor: pointer;
-    margin: 2.5px;
+    font-size: 3vh;
+    margin: 0.3%;
 }
 
-/*Close Button*/
-main>div>div:nth-child(3) {
+#welcome{
     text-align: center;
-    font-weight: bold;
-    font-size: 1.8vw;
+    position: absolute;
+    top: 0px;
+    left: 41vw;
+    font-weight: 500;
+    letter-spacing: unset;
+    cursor: default;
+    font-size: 6vh;
 }
- /*Main*/
 
 
- /*First Time Div*/
- #firstTimeDiv {
-     border: none;
-     background-color: white;
-     z-index: 5000;
-     cursor: default;
-     width: 100vw;
-     height: 82vh;
-     display: none;
- }
-
- video {
-     width: 70vw;
-     height: 60vh;
-     border: 5px dashed black;
-     display: block;
-     margin: auto;
-     margin-bottom: 5vh;
- }
-
- #continue {
-     width: 20vw;
-     height: 10vh;
-     display: block;
-     margin: auto;
-     cursor: pointer;
-     font-size: 1.7vw;
-     font-weight: bold;
-     background-color: #4CAF50;
- }
-
- .downloadAndPatch {
-     display: none;
- }
-
- #pPatch {
-     text-align: center;
-     font-size: 3vw;
-     position: relative;
-     top: 8vh;
-     font-style: italic;
- }
-
-a {
-    display: block;
-    margin: auto;
-    text-decoration-color: black;
+#onBoarding>p {
+    font-size: 3.6vh;
     position: relative;
-    top: 5vh;
+    left: 43.5vw;
+    top: 8vh;
+    width: 45%;
+    margin-bottom: 4.5vh;
+    
 }
 
- #downloadPatch {
-     display: none;
-     margin: auto;
-     margin-top: 5vh;
-     cursor: pointer;
-     font-size: 1.7vw;
-     font-weight: bold;
-     background-color: rgb(106, 76, 175);
-     width: 20vw;
-     height: 10vh;
-     position: relative;
-     top: 3vh;
- }
+#addExtention {
+    position: absolute;
+    left: 15vw;
+    bottom: 2vh;
+    width: 10vw;
+    height: 9vh;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 4vh;
+    transition-duration: 0.4s;
+}
 
- #skipDownload {
-     text-align: center;
-     margin-top: 10vh;
-     color: gray;
-     cursor: pointer;
- }
+#addExtention:hover {
+    background-color: white;
+    color: #4CAF50;
+    border: 5px solid black;
+}
 
- #startWebager {
-     margin: auto;
-     font-size: 1.7vw;
-     font-weight: bold;
-     background-color: #4CAF50;
-     width: 20vw;
-     height: 10vh;
-     position: relative;
-     top: 30vh;
-     cursor: pointer;
- }
+#start {
+    position: absolute;
+    bottom: 9.5vh;
+    right: 9vw;
+    width: 20vw;
+    height: 20vh;
+    background-color: rgb(255, 0, 43);
+    color: white;
+    font-weight: bold;
+    font-size: 10vh;
+}
 
- 
+#global {
+    /*background-color: rgb(240, 240, 240);*/
+    background-color: white;
+    font-size: 70%;
+}
